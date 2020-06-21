@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/Promise-Devotion/sijun-react-ui/issues"
   },
-  "homepage": "https://github.com/Promise-Devotion/sijun-react-ui#readme"
+  "homepage": "https://github.com/Promise-Devotion/sijun-react-ui#readme",
+  "devDependencies": {
+    "awesome-typescript-loader": "^5.2.1",
+    "typescript": "^3.9.5",
+    "webpack": "4.29.6",
+    "webpack-cli": "3.2.3"
+  }
 }
