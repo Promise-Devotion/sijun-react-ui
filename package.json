@@ -33,6 +33,7 @@
     "html-webpack-plugin": "^4.3.0",
     "jest": "^26.1.0",
     "react-test-renderer": "^16.13.1",
+    "svg-sprite-loader": "^5.0.0",
     "ts-jest": "^26.1.1",
     "typescript": "^3.9.5",
     "webpack": "4.29.6",

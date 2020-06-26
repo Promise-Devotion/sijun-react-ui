@@ -3,4 +3,4 @@ import ReactDom from 'react-dom';
 
 import Icon from './icon';
 
-ReactDom.render(<Icon name={'weChat'}></Icon>, document.body);
+ReactDom.render(<div><Icon name={'weChat'}></Icon></div>, document.body);
