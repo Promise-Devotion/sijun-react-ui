@@ -19,7 +19,8 @@
     // "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "noUnusedLocals": true,
-    "suppressImplicitAnyIndexErrors": true
+    "suppressImplicitAnyIndexErrors": true,
+    "typeRoots": ["./@types", "./node_modules/@types"],
   },
   "include": [
     "types/**/*",
