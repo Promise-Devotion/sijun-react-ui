@@ -9,11 +9,9 @@ describe("ixon", () => {
     expect(json).toMatchSnapshot();
   });
   it("onClick", () => {
-    const fn = jest.fn()
-    const fn2 = jest.fn()
+    const fn = jest.fn();
     const component = mount(<Icon name='qq' onClick={fn}></Icon>);
     component.find("svg").simulate("click");
-    // expect(fn2).toBeCalled();
-    expect(fn).toHaveBeenCalled();
+    expect(fn).toBeCalled();
   });
 });
