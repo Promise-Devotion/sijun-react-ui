@@ -1,8 +1,3 @@
-// describe(Button.displayName, () => {
-//     it('DisplayName', () => {
-//       expect(Button.displayName).toEqual('Button')
-//     })
-
 import renderer from 'react-test-renderer'
 import React from 'react'
 import Button from '../button'
