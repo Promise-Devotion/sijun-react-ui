@@ -1,11 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ixon DisplayName 1`] = `
-<span>
-  <svg>
-    <use
-      xlinkHref="#zfb"
-    />
-  </svg>
-</span>
+<svg
+  className="logo"
+  name="zfb"
+>
+  <use
+    xlinkHref="#zfb"
+  />
+</svg>
 `;
