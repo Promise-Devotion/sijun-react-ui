@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="3" failures="0" time="7.576">
+  <testsuite name="ixon" errors="0" failures="0" skipped="0" timestamp="2020-07-06T15:06:55" time="3.78" tests="2">
+    <testcase classname="ixon DisplayName" name="ixon DisplayName" time="0.017">
+    </testcase>
+    <testcase classname="ixon onClick" name="ixon onClick" time="0.054">
+    </testcase>
+  </testsuite>
+  <testsuite name="button" errors="0" failures="0" skipped="0" timestamp="2020-07-06T15:06:58" time="0.879" tests="1">
+    <testcase classname="button 是一个div" name="button 是一个div" time="0.016">
+    </testcase>
+  </testsuite>
+</testsuites>
