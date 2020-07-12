@@ -3,7 +3,7 @@ module.exports = {
     verbose: true,
     clearMocks: false,
     collectCoverage: true,
-    reporters: ["default", "jest-junit"],
+    // reporters: ['default', 'junit'],
     moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx'],
     moduleDirectories: ['node_modules'],
     globals: {
@@ -12,13 +12,13 @@ module.exports = {
         },
     },
     moduleNameMapper: {
-        "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/test/__mocks__/file-mock.js",
-        "\\.(css|less|sass|scss)$": "<rootDir>/test/__mocks__/object-mock.js",
+        '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$': '<rootDir>/test/__mocks__/file-mock.js',
+        '\\.(css|less|sass|scss)$': '<rootDir>/test/__mocks__/object-mock.js',
     },
     testMatch: ['<rootDir>/**/__tests__/**/*.unit.(js|jsx|ts|tsx)'],
     transform: {
-        "^.+unit\\.(js|jsx)$": "babel-jest",
+        '^.+unit\\.(js|jsx)$': 'babel-jest',
         '^.+\\.(ts|tsx)$': 'ts-jest',
     },
-    setupFilesAfterEnv: ["<rootDir>test/setupTests.js"]
+    setupFilesAfterEnv: ['<rootDir>test/setupTests.js']
 }
