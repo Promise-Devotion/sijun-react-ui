@@ -10,8 +10,8 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-        keys:
-          - v2-dependencies-{{ checksum "package.json" }}
+          keys:
+            - v2-dependencies-{{ checksum "package.json" }}
       - run: yarn install
       - save_cache:
           paths:
