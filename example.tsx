@@ -1,21 +1,34 @@
-import React from 'react';
-import ReactDom from 'react-dom'
-// import Icon from './lib/icon/icon'
+import React from "react";
+import ReactDom from "react-dom";
+import IconExample from './lib/icon/example/icon.example'
+import ButtonExample from './lib/button/example/button.example'
 
-ReactDom.render((
+import {HashRouter as Router, Route, Link} from 'react-router-dom';
+
+ReactDom.render(
+  <Router>
     <div>
-        <header>
-            <div className="logo">Sijun-React-UI</div>
-        </header>
-        <div>
-            <aside>
-                <h3>组件</h3>
-                <ol>
-                    <li>icon</li>
-                    <li>button</li>
-                </ol>
-            </aside>
-            <main></main>
-        </div>
+      <header>
+        <div className="logo">Sijun-React-UI</div>
+      </header>
+      <div>
+        <aside>
+          <h3>组件</h3>
+          <ol>
+            <li>
+                <Link to="/icon">icon</Link>
+            </li>
+            <li>
+                <Link to="/button">button</Link>
+            </li>
+          </ol>
+        </aside>
+        <main>
+            <Route path="/icon" component={IconExample}/>
+            <Route path="/button" component={ButtonExample}/>
+        </main>
+      </div>
     </div>
-), document.querySelector('#root'))
+  </Router>,
+  document.querySelector("#root")
+);
