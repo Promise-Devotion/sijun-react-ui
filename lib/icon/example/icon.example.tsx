@@ -7,6 +7,7 @@ const IconExample = () => {
             <Icon name="zfb" />
             <Icon name="qq" />
             <Icon name="wechat" />
+            <Icon name="close" />
         </div>
     );
 }

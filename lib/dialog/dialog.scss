@@ -3,9 +3,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 200px;
-    height: 200px;
-    border-radius: 8px;
+    width: 30rem;
+    border-radius: 4px;
     background: white;
     &-mask{
         position: fixed;
@@ -19,5 +18,34 @@
         position: absolute;
         right: 0;
         top: 0;
+        width: 54px;
+        height: 54px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+    &-header{
+        padding: 16px 24px;
+        border-bottom: 1px solid #f0f0f0;
+        border-radius: 2px 2px 0 0;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 22px;
+    }
+    &-main{
+        min-height: 5rem;
+        padding: 14px 24px;
+    }
+    &-footer{
+        padding: 10px 16px;
+        text-align: right;
+        background: 0 0;
+        border-top: 1px solid #f0f0f0;
+        border-radius: 0 0 2px 2px;
+        button{
+            box-sizing: border-box;
+            height: 32px;
+        }
     }
 }
