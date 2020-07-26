@@ -14,7 +14,7 @@ const DialogExample = () => {
   }
   return (
     <div>
-      <div>
+      <div style={{position: "relative", zIndex: 999, border: '1px solid red'}}>
         <h1>点击mask关闭(默认)</h1>
         <button onClick={() => setx(!x)}>点击</button>
         <Dialog visible={x} onClose={() => {setx(false)}} closeMask={true} buttons={
@@ -41,6 +41,10 @@ const DialogExample = () => {
             </button>,
           ]
         } />
+      </div>
+      <div>
+        <h1>alert</h1>
+        <button onClick={() => sety(!y)}>点击</button>
       </div>
     </div>
   );

@@ -1,29 +1,29 @@
 import React, { Fragment, ReactElement } from "react";
+import ReactDOM from "react-dom";
 
 import { scopedClassMaker } from "../helpers/classes";
-import './dialog.scss'
-import Icon from '../index';
+import "./dialog.scss";
+import Icon from "../index";
 
 interface Props {
   visible: boolean;
-  buttons: Array<ReactElement>,
-  onClose: React.MouseEventHandler,
-  closeMask: boolean
+  buttons: Array<ReactElement>;
+  onClose: React.MouseEventHandler;
+  closeMask: boolean;
 }
 
 const scopedClass = scopedClassMaker("sui-dialog");
 const sc = scopedClass;
 const Dialog: React.FunctionComponent<Props> = (props) => {
   const handleclose: React.MouseEventHandler = (e) => {
-    props.onClose(e)
-  }
-  const closeClickMask:React.MouseEventHandler = (e) => {
+    props.onClose(e);
+  };
+  const closeClickMask: React.MouseEventHandler = (e) => {
     if (props.closeMask) {
-      props.onClose(e)
+      props.onClose(e);
     }
-  }
-  return (
-    props.visible ? 
+  };
+  const x = props.visible ? (
     <Fragment>
       <div className={sc("mask")} onClick={closeClickMask}></div>
       <div className={sc("")}>
@@ -37,16 +37,19 @@ const Dialog: React.FunctionComponent<Props> = (props) => {
           <p>Some contents...</p>
         </main>
         <footer className={sc("footer")}>
-          {
-            props.buttons.map((button, index) => 
-              React.cloneElement(button, {key: index})
-            )}
+          {props.buttons.map((button, index) =>
+            React.cloneElement(button, { key: index })
+          )}
         </footer>
       </div>
     </Fragment>
-    :
-    null
-  );
+  ) : null;
+  return ReactDOM.createPortal(x, document.body);
 };
+
+// const alert = (content: string) => {
+
+// };
+// export {alert}
 
 export default Dialog;
