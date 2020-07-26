@@ -32,15 +32,14 @@ const Dialog: React.FunctionComponent<Props> = (props) => {
         </div>
         <header className={sc("header")}>提示</header>
         <main className={sc("main")}>{props.children}</main>
-        {
-          props.buttons && props.buttons.length > 0 &&
-            <footer className={sc("footer")}>
-              {props.buttons &&
-                props.buttons.map((button, index) =>
-                  React.cloneElement(button, { key: index })
-                )}
-            </footer>
-        }
+        {props.buttons && props.buttons.length > 0 && (
+          <footer className={sc("footer")}>
+            {props.buttons &&
+              props.buttons.map((button, index) =>
+                React.cloneElement(button, { key: index })
+              )}
+          </footer>
+        )}
       </div>
     </Fragment>
   ) : null;
@@ -56,35 +55,35 @@ const modal = (content: ReactNode, buttons?: Array<ReactElement>) => {
     ReactDOM.unmountComponentAtNode(div);
     div.remove();
   };
-  const component = <Dialog
-    visible={true}
-    buttons={buttons}
-    onClose={close}
-    >{content}</Dialog>
+  const component = (
+    <Dialog visible={true} buttons={buttons} onClose={close}>
+      {content}
+    </Dialog>
+  );
   const div = document.createElement("div");
   document.body.append(div);
   ReactDOM.render(component, div);
   return close;
-}
+};
 const alert = (content: string) => {
-  const button = <button onClick={() => close()}>OK</button>
-  const close = modal(content, [button])
+  const button = <button onClick={() => close()}>OK</button>;
+  const close = modal(content, [button]);
 };
 
 const confirm = (content: string, yes?: () => void, no?: () => void) => {
   const onYes = () => {
-    close()
+    close();
     yes && yes();
   };
   const onNo = () => {
-    close()
+    close();
     no && no();
   };
   const buttons = [
     <button onClick={onYes}>OK</button>,
-    <button onClick={onNo}>CANCEL</button>
-  ]
-  const close = modal(content, buttons)
+    <button onClick={onNo}>CANCEL</button>,
+  ];
+  const close = modal(content, buttons);
 };
 
 export { alert, confirm, modal };

@@ -16,11 +16,7 @@ const DialogExample = () => {
     const close = modal(
       <h1>
         nihao. modal!
-        <button
-          onClick={() => close()}
-        >
-          关闭
-        </button>
+        <button onClick={() => close()}>关闭</button>
       </h1>
     );
   };
