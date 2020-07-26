@@ -1,4 +1,4 @@
-import React, { Fragment, ReactElement } from "react";
+import React, { Fragment, ReactElement, ReactNode, ReactFragment } from "react";
 import ReactDOM from "react-dom";
 
 import { scopedClassMaker } from "../helpers/classes";
@@ -9,7 +9,7 @@ interface Props {
   visible: boolean;
   buttons?: Array<ReactElement>;
   onClose: React.MouseEventHandler;
-  closeMask: boolean;
+  closeMask?: boolean;
 }
 
 const scopedClass = scopedClassMaker("sui-dialog");
@@ -32,12 +32,15 @@ const Dialog: React.FunctionComponent<Props> = (props) => {
         </div>
         <header className={sc("header")}>提示</header>
         <main className={sc("main")}>{props.children}</main>
-        <footer className={sc("footer")}>
-          {props.buttons &&
-            props.buttons.map((button, index) =>
-              React.cloneElement(button, { key: index })
-            )}
-        </footer>
+        {
+          props.buttons && props.buttons.length > 0 &&
+            <footer className={sc("footer")}>
+              {props.buttons &&
+                props.buttons.map((button, index) =>
+                  React.cloneElement(button, { key: index })
+                )}
+            </footer>
+        }
       </div>
     </Fragment>
   ) : null;
@@ -70,20 +73,20 @@ const confirm = (content: string, yes?: () => void, no?: () => void) => {
   const onYes = () => {
     ReactDOM.render(React.cloneElement(component, { visible: false }), div);
     ReactDOM.unmountComponentAtNode(div);
-    div.remove()
-    yes && yes()
+    div.remove();
+    yes && yes();
   };
   const onNo = () => {
     ReactDOM.render(React.cloneElement(component, { visible: false }), div);
     ReactDOM.unmountComponentAtNode(div);
-    div.remove()
-    no && no()
+    div.remove();
+    no && no();
   };
   const component = (
     <Dialog
       visible={true}
       closeMask={false}
-      onClose={() => {}}
+      onClose={onNo}
       buttons={[
         <button onClick={onYes}>yes</button>,
         <button onClick={onNo}>no</button>,
@@ -96,6 +99,22 @@ const confirm = (content: string, yes?: () => void, no?: () => void) => {
   document.body.append(div);
   ReactDOM.render(component, div);
 };
-export { alert, confirm };
+const modal = (content: ReactNode | ReactFragment) => {
+  const onClose = () => {
+    ReactDOM.render(React.cloneElement(component, { visible: false }), div);
+    ReactDOM.unmountComponentAtNode(div);
+    div.remove();
+  };
+  const component = (
+    <Dialog visible={true} onClose={onClose}>
+      {content}
+    </Dialog>
+  );
+  const div = document.createElement("div");
+  document.body.append(div);
+  ReactDOM.render(component, div);
+  return onClose;
+};
+export { alert, confirm, modal };
 
 export default Dialog;

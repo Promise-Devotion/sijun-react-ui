@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Dialog, { alert, confirm } from "../dialog";
+import Dialog, { alert, confirm, modal } from "../dialog";
 
 const DialogExample = () => {
   const [x, setx] = useState(false);
@@ -11,6 +11,18 @@ const DialogExample = () => {
   const handleOk = () => {
     setx(false);
     sety(false);
+  };
+  const openModal = () => {
+    const close = modal(
+      <h1>
+        nihao. modal!
+        <button
+          onClick={() => close()}
+        >
+          关闭
+        </button>
+      </h1>
+    );
   };
   return (
     <div>
@@ -54,7 +66,21 @@ const DialogExample = () => {
       </div>
       <div>
         <h1>confirm</h1>
-        <button onClick={() => confirm("content", () => {}, () => {})}>confirm</button>
+        <button
+          onClick={() =>
+            confirm(
+              "content",
+              () => {},
+              () => {}
+            )
+          }
+        >
+          confirm
+        </button>
+      </div>
+      <div>
+        <h1>modal</h1>
+        <button onClick={openModal}>modal</button>
       </div>
     </div>
   );
