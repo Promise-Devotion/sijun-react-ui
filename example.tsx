@@ -19,7 +19,7 @@ ReactDom.render(
         <div className="logo">
           <img src={logo.default} width={48} height={48} alt=""/>
           <span>Sijun-React-UI</span>
-          <a href="https://github.com/Promise-Devotion/sijun-react-ui" className="rightIcon">
+          <a href="https://github.com/Promise-Devotion/sijun-react-ui" className="rightIcon" target="_blank">
             <Icon name={"github"}/>
           </a>
         </div>
