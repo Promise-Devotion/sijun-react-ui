@@ -1,3 +1,25 @@
 .gu-layout {
-    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+
+    &-content {
+        flex-grow: 1;
+    }
+
+    & & {
+        flex-direction: row;
+        flex-grow: 1;
+    }
+
+    &>& {
+        flex-grow: 1;
+    }
+
+    &-hasAside {
+        flex-direction: row;
+
+        >.gu-layout {
+            flex-direction: column;
+        }
+    }
 }

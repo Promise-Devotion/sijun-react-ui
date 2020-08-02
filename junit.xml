@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="3" failures="0" time="25.621">
-  <testsuite name="button" errors="0" failures="0" skipped="0" timestamp="2020-07-12T04:13:21" time="12.255" tests="1">
-    <testcase classname="button 是一个div" name="button 是一个div" time="0.044">
+<testsuites name="jest tests" tests="3" failures="0" time="12.156">
+  <testsuite name="ixon" errors="0" failures="0" skipped="0" timestamp="2020-08-02T06:16:49" time="3.8" tests="2">
+    <testcase classname="ixon DisplayName" name="ixon DisplayName" time="0.02">
+    </testcase>
+    <testcase classname="ixon onClick" name="ixon onClick" time="0.067">
     </testcase>
   </testsuite>
-  <testsuite name="ixon" errors="0" failures="0" skipped="0" timestamp="2020-07-12T04:13:21" time="12.882" tests="2">
-    <testcase classname="ixon DisplayName" name="ixon DisplayName" time="0.019">
-    </testcase>
-    <testcase classname="ixon onClick" name="ixon onClick" time="0.058">
+  <testsuite name="button" errors="0" failures="0" skipped="0" timestamp="2020-08-02T06:16:52" time="0.937" tests="1">
+    <testcase classname="button 是一个div" name="button 是一个div" time="0.018">
     </testcase>
   </testsuite>
 </testsuites>
