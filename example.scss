@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*::after {
+    box-sizing: border-box;
+}
+
+*::before {
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: normal;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    .example-header{
+        box-shadow: 0 2px 8px #f0f1f2;
+        margin-bottom: 4px;
+        .logo{
+            padding: 0 20px;
+            font-weight: bold;
+            img{
+                display: inline-block;
+                vertical-align: middle;
+                margin-right: 10px;
+            }
+            .rightIcon{
+                float: right;
+                margin-top: 7px;
+            }
+        }
+    }
+}

@@ -5,15 +5,27 @@ import ButtonExample from "./lib/button/example/button.example";
 import DialogExample from "./lib/dialog/example/dialog.example";
 import LayoutExample from "./lib/layout/example/layout.axample";
 import { HashRouter as Router, Route, Link } from "react-router-dom";
+// import Header from "./lib/layout/header";
+import Layout, { Header, Aside, Content, Footer } from "./lib/layout/layout";
+const logo = require('./logo.png');
+import "./example.scss";
+import Icon from "./lib/icon/icon";
+console.log(logo)
 
 ReactDom.render(
   <Router>
-    <div>
-      <header>
-        <div className="logo">Sijun-React-UI</div>
-      </header>
-      <div>
-        <aside>
+    <Layout className="page">
+      <Header className="example-header">
+        <div className="logo">
+          <img src={logo.default} width={48} height={48} alt=""/>
+          <span>Sijun-React-UI</span>
+          <a href="https://github.com/Promise-Devotion/sijun-react-ui" className="rightIcon">
+            <Icon name={"github"}/>
+          </a>
+        </div>
+      </Header>
+      <Layout>
+        <Aside style={{border: '1px solid green'}}>
           <h3>组件</h3>
           <ol>
             <li>
@@ -29,15 +41,16 @@ ReactDom.render(
               <Link to="/layout">Layout 布局</Link>
             </li>
           </ol>
-        </aside>
-        <main>
+        </Aside>
+        <Content style={{border: '1px solid blue'}}>
           <Route path="/icon" component={IconExample} />
           <Route path="/button" component={ButtonExample} />
           <Route path="/dialog" component={DialogExample} />
           <Route path="/layout" component={LayoutExample} />
-        </main>
-      </div>
-    </div>
+        </Content>
+      </Layout>
+      <Footer style={{border: '1px solid cyan'}}></Footer>
+    </Layout>
   </Router>,
   document.querySelector("#root")
 );

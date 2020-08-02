@@ -5,7 +5,10 @@
     &-content {
         flex-grow: 1;
     }
-
+    >.gu-layout{
+        flex-grow: 1;
+        flex-direction: row;
+    }
     & & {
         flex-direction: row;
         flex-grow: 1;
