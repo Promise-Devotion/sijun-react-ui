@@ -24,8 +24,8 @@ ReactDom.render(
           </a>
         </div>
       </Header>
-      <Layout>
-        <Aside style={{border: '1px solid green'}}>
+      <Layout className="page-contain">
+        <Aside className="example-aside">
           <h3>组件</h3>
           <ol>
             <li>
@@ -42,7 +42,7 @@ ReactDom.render(
             </li>
           </ol>
         </Aside>
-        <Content style={{border: '1px solid blue'}}>
+        <Content className="example-content">
           <Route path="/icon" component={IconExample} />
           <Route path="/button" component={ButtonExample} />
           <Route path="/dialog" component={DialogExample} />

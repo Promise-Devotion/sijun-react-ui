@@ -41,4 +41,32 @@ h6 {
             }
         }
     }
+    .page-contain{
+        .example-aside{
+            width: 200px;
+            box-sizing: border-box;
+            border-right: 1px solid #CCCCCC;
+        }
+        .example-content{
+            width: 100%;
+            padding: 0 48px;
+        }
+    }
+    .example-main{
+        flex-direction: column;
+    }
+    .example-aside{
+        width: 300px;
+        min-height: 90vh;
+        overflow-y: auto;
+    }
+    .example-content{
+        flex-direction: column;
+        width: 100%;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+    .example-footer{
+        height: 100px;
+    }
 }

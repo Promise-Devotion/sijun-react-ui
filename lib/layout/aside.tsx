@@ -8,7 +8,7 @@ const sc = scopedClassMaker("gu-layout");
 
 const Aside: React.FunctionComponent<Props> = (props) => {
   const {className, ...restProps} = props
-  return <div className={sc("content", {extra: className})} {...restProps}>{props.children}</div>;
+  return <div className={sc("aside", {extra: className})} {...restProps}>{props.children}</div>;
 };
 
 export default Aside;
