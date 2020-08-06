@@ -49,7 +49,7 @@ ReactDom.render(
           <Route path="/layout" component={LayoutExample} />
         </Content>
       </Layout>
-      <Footer style={{border: '1px solid cyan'}}></Footer>
+      <Footer style={{border: '1px solid cyan'}}>Footer</Footer>
     </Layout>
   </Router>,
   document.querySelector("#root")

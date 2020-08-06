@@ -37,7 +37,7 @@ export default function () {
       </div>
       <div>
         <h1>布局4</h1>
-        <Layout className="x-layout">
+        <Layout>
           <Aside className="x-aside">Aside</Aside>
           <Layout className="x-layout">
             <Header className="x-header">Header</Header>

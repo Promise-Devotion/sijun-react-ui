@@ -1,26 +1,43 @@
+// .gu-layout {
+//     display: flex;
+//     flex-direction: column;
+
+//     >.gu-layout {
+//         flex-grow: 1;
+//         flex-direction: column;
+//     }
+
+//     & & {
+//         flex-direction: row;
+//         flex-grow: 1;
+//     }
+
+//     &>& {
+//         flex-grow: 1;
+//     }
+
+//     &-hasAside {
+//         flex-direction: row;
+
+//         >.gu-layout {
+//             flex-direction: column;
+//         }
+//     }
+// }
 .gu-layout {
     display: flex;
     flex-direction: column;
-
+    &-content {
+      flex-grow: 1;
+    }
     >.gu-layout {
-        flex-grow: 1;
-        flex-direction: column;
+      flex-grow: 1;
+      flex-direction: row;
     }
-
-    & & {
-        flex-direction: row;
-        flex-grow: 1;
-    }
-
-    &>& {
-        flex-grow: 1;
-    }
-
     &-hasAside {
-        flex-direction: row;
-
-        >.gu-layout {
-            flex-direction: column;
-        }
+      flex-direction: row;
+      >.gu-layout {
+        flex-direction: column;
+      }
     }
-}
+  }
