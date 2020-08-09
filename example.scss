@@ -21,6 +21,12 @@ h6 {
     font-size: normal;
 }
 
+body {
+    font-size: 16px;
+}
+pre {
+    font-family: "Fira Code Medium", Consolas, monospace;
+}
 .page {
     display: flex;
     flex-direction: column;
@@ -75,14 +81,15 @@ h6 {
                 margin: 4px 0 8px 0;
 
                 a {
-                    color: rgba(0,0,0,.85);
+                    color: rgba(0, 0, 0, .85);
                     display: block;
                     text-decoration: none;
                     padding: 8px 16px 8px 40px;
 
                     &.active {
-                        border-right: 2px solid red;
+                        border-right: 3px solid #1890ff;
                         background-color: #e6f7ff;
+                        color: #1890ff;
                     }
 
                     &:hover {

@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDom from "react-dom";
-import IconExample from "./lib/icon/example/icon.example";
+import IconExample from "./lib/icon/demo/icon.demo";
 import ButtonExample from "./lib/button/example/button.example";
 import DialogExample from "./lib/dialog/example/dialog.example";
 import LayoutExample from "./lib/layout/example/layout.axample";
@@ -10,7 +10,8 @@ import Layout, { Header, Aside, Content, Footer } from "./lib/layout/layout";
 const logo = require('./logo.png');
 import "./example.scss";
 import Icon from "./lib/icon/icon";
-console.log(logo)
+// const x = require('!!raw-loader!./lib/icon/icon.tsx')
+// console.log(x)
 
 ReactDom.render(
   <Router>
