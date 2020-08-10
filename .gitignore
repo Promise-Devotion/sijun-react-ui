@@ -1,5 +1,6 @@
 # Logs
 /dist/*
+/doc/*
 logs
 *.log
 npm-debug.log*
