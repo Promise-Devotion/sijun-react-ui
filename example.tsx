@@ -10,6 +10,7 @@ import Layout, { Header, Aside, Content, Footer } from "./lib/layout/layout";
 const logo = require('./logo.png');
 import "./example.scss";
 import Icon from "./lib/icon/icon";
+import FormExample from "./lib/form/example/form.example";
 // const x = require('!!raw-loader!./lib/icon/icon.tsx')
 // console.log(x)
 
@@ -41,6 +42,9 @@ ReactDom.render(
             <li>
               <NavLink to="/layout">Layout 布局</NavLink>
             </li>
+            <li>
+              <NavLink to="/form">Form表单</NavLink>
+            </li>
           </ul>
         </Aside>
         <Content className="example-content">
@@ -48,6 +52,7 @@ ReactDom.render(
           <Route path="/button" component={ButtonExample} />
           <Route path="/dialog" component={DialogExample} />
           <Route path="/layout" component={LayoutExample} />
+          <Route path="/form" component={FormExample} />
           <Footer style={{border: '1px solid cyan'}}>Footer</Footer>
         </Content>
       </Layout>
