@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, Fragment } from "react";
 import Form from '../form'
 import React from 'react';
 
@@ -12,7 +12,14 @@ const FormExample = () => {
         {name: 'password', label: '密码', input: {type: 'password'}}
     ])
   return (
-    <Form value={formdata} fields={fields}></Form>
+    <Form value={formdata} fields={fields} 
+        buttons={
+            <Fragment>
+                <button>提交</button>
+                <button>取消</button>
+            </Fragment>
+        }
+    ></Form>
   );
 };
 export default FormExample;
