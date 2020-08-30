@@ -1,4 +1,7 @@
 import React, { ReactFragment } from "react";
+import Input from "../input/input";
+import classes from "../helpers/classes";
+import "./form.scss";
 
 export interface FormValue {
   [k: string]: any;
@@ -9,7 +12,7 @@ interface Props {
   buttons: ReactFragment;
   onSubmit: React.FormEventHandler;
   onChange: (value: FormValue) => void;
-  errors: { [k: string]: string[] }
+  errors: { [k: string]: string[] };
 }
 
 const Form: React.FunctionComponent<Props> = (props) => {
@@ -23,18 +26,24 @@ const Form: React.FunctionComponent<Props> = (props) => {
     props.onChange(newValue);
   };
   return (
-    <form onSubmit={onSubmit}>
-      {props.fields.map((f) => (
-        <div key={f.name}>
-          {f.label}
-          <input
-            type={f.input.type}
-            value={formData[f.name]}
-            onChange={(e) => onInputChange(f.name, e.target.value)}
-          />
-          <div>{props.errors[f.name]}</div>
-        </div>
-      ))}
+    <form className={classes("jun-form")} onSubmit={onSubmit}>
+      <table>
+        {props.fields.map((f) => (
+          <tr className={classes("jun-form-row")} key={f.name}>
+            <td>
+              <label>{f.label}</label>
+            </td>
+            <td>
+              <Input
+                type={f.input.type}
+                value={formData[f.name]}
+                onChange={(e) => onInputChange(f.name, e.target.value)}
+              />
+            </td>
+            <div>{props.errors[f.name]}</div>
+          </tr>
+        ))}
+      </table>
       <div>{props.buttons}</div>
     </form>
   );

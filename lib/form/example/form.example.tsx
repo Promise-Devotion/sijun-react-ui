@@ -10,7 +10,7 @@ const FormExample = () => {
     password: "",
   });
   const [fields] = useState([
-    { name: "username", label: "用户名", input: { type: "text" } },
+    { name: "username", label: "用户名用户名", input: { type: "text" } },
     { name: "password", label: "密码", input: { type: "password" } },
   ]);
 
