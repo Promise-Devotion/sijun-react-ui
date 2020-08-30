@@ -19,7 +19,7 @@ function isEmpty(value: any) {
 type FormRules = Array<FormRule>;
 const Validate = (FormValue: FormValue, rules: FormRules): FormErrors => {
   let errors = {};
-  const addError = (key: string, error: OneError) : void => {
+  const addError = (key: string, error: string) : void => {
     if (errors[key] === undefined) {
       errors[key] = []
     }
@@ -30,11 +30,14 @@ const Validate = (FormValue: FormValue, rules: FormRules): FormErrors => {
     if (rule.required && isEmpty(value)) {
       addError(rule.key, '必填')
     }
-    if (rule.minLength && isEmpty(value) && value.length < rule.minLength) {
-      addError(rule.key, 'minLength')
+    if (rule.minLength && !isEmpty(value) && value.length < rule.minLength) {
+      addError(rule.key, '太短')
     }
-    if (rule.maxLength && isEmpty(value) && value.length > rule.maxLength) {
-      addError(rule.key, 'maxLength')
+    if (rule.maxLength && !isEmpty(value) && value.length > rule.maxLength) {
+      addError(rule.key, '太长')
+    }
+    if (rule.pattern && !(rule.pattern.test(value))) {
+      addError(rule.key,  '不符合规范')
     }
   });
   return errors;
