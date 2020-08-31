@@ -1,11 +1,22 @@
-import React from 'react'
+import React, { ButtonHTMLAttributes } from "react";
+import classes from "../helpers/classes";
+import "./button.scss";
 
-function Button() {
-    return(
-        <div>
-            按钮
-        </div>
-    )
+interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
+  level?: "normal" | "important" | "danger"
 }
 
-export default Button
+const Button: React.FunctionComponent<Props> = (props) => {
+  const { className, children, level, ...rest } = props;
+  return (
+    <button className={classes("jun-button", `jun-button-${level}`, className)} {...rest}>
+      按钮
+    </button>
+  );
+};
+
+Button.defaultProps = {
+  level: "normal"
+}
+
+export default Button;

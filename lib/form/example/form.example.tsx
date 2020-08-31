@@ -3,6 +3,7 @@ import Form from "../form";
 import React from "react";
 import { FormValue } from "../form";
 import Validate from "../validate";
+import Button from '../../button/button';
 
 const FormExample = () => {
   const [formData, setFormData] = useState<FormValue>({
@@ -31,8 +32,8 @@ const FormExample = () => {
       fields={fields}
       buttons={
         <Fragment>
-          <button type="submit">提交</button>
-          <button>取消</button>
+          <Button type="submit" level="danger">提交</Button>
+          <Button>取消</Button>
         </Fragment>
       }
       errors={errors}

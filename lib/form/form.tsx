@@ -39,8 +39,8 @@ const Form: React.FunctionComponent<Props> = (props) => {
                 value={formData[f.name]}
                 onChange={(e) => onInputChange(f.name, e.target.value)}
               />
+              <div>{props.errors[f.name]}</div>
             </td>
-            <div>{props.errors[f.name]}</div>
           </tr>
         ))}
       </table>

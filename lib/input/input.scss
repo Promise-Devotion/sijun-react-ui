@@ -1,13 +1,13 @@
 .jun-input{
-    border: 1px solid red;
+    border: 1px solid #d9d9d9;
     line-height: 22px;
     padding: 4px 11px;
     border-radius: 4px;
     transition: box-shadow 0.5s;
-    box-shadow: 0 0 0 2px fade-out($color: blue, $amount: 1);
+    box-shadow: 0 0 0 1px fade-out($color: #1890ff, $amount: 1);
     &:focus{
         outline: none;
-        border-color: blue;
-        box-shadow: 0 0 0 2px fade-out($color: blue, $amount: 0.5);
+        border-color: #1890ff;
+        box-shadow: 0 0 0 2px fade-out($color: #1890ff, $amount: 0.5);
     }
 }
