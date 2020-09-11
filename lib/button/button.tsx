@@ -3,7 +3,7 @@ import classes from "../helpers/classes";
 import "./button.scss";
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
-  level?: "normal" | "important" | "danger" | "primary" | "text";
+  level?: "normal" | "important" | "danger" | "primary" | "success" | "text";
   size?: "small" | "medium" | "large"
 }
 

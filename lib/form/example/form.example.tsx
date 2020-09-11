@@ -39,7 +39,8 @@ const FormExample = () => {
       errors={errors}
       onSubmit={onSubmit}
       onChange={(newValue) => setFormData(newValue)}
-    ></Form>
+    >
+    </Form>
   );
 };
 export default FormExample;

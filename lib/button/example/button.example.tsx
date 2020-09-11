@@ -9,7 +9,7 @@ const ButtonExample = () => {
       <Button level="danger" className="b c" size="medium">
         提交
       </Button>
-      <Button level="important" className="d" size="large">成功</Button>
+      <Button level="success" className="d" size="large">成功</Button>
     </div>
   );
 };

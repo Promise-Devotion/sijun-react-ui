@@ -41,8 +41,25 @@
 }
 
 .jun-button-danger {
-    border: 1px solid red;
-    color: red;
+    border-color: #f56c6c;
+    color: #ffffff;
+    background: #f56c6c;
+}
+
+.jun-button-danger:hover{
+    background: #f78989;
+    border-color: #f78989;
+    color: #fff;
+}
+.jun-button-success{
+    color: #fff;
+    background-color: #67c23a;
+    border-color: #67c23a;
+}
+.jun-button-success:hover{
+    background: #85ce61;
+    border-color: #85ce61;
+    color: #fff;
 }
 .jun-button-primary{
     color: #fff;
