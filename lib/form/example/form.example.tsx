@@ -24,7 +24,6 @@ const FormExample = () => {
     ];
     const errors = Validate(formData, rules);
     setErrors(errors)
-    console.log(errors);
   };
   return (
     <Form
