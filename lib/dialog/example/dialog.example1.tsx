@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Dialog from "../dialog";
+import Button from "../../button/button";
 
 const DialogExample = () => {
   const [x, setx] = useState(false);
@@ -23,10 +24,12 @@ const DialogExample = () => {
           }}
           closeMask={true}
           buttons={[
-            <button onClick={handleCancel}>Return</button>,
-            <button onClick={handleOk}>Submit</button>,
+            <Button level="normal" className="a" size="medium" onClick={handleCancel}>Return</Button>,
+            <Button level="primary" className="a" size="medium" onClick={handleOk}>Submit</Button>,
           ]}
-        />
+        >
+          点击mask关闭(默认)
+        </Dialog>
       </div>
     </div>
   );

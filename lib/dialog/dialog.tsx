@@ -5,6 +5,8 @@ import { scopedClassMaker } from "../helpers/classes";
 import "./dialog.scss";
 import Icon from "../index";
 
+import Button from "../button/button";
+
 interface Props {
   visible: boolean;
   buttons?: Array<ReactElement>;
@@ -66,7 +68,7 @@ const modal = (content: ReactNode, buttons?: Array<ReactElement>) => {
   return close;
 };
 const alert = (content: string) => {
-  const button = <button onClick={() => close()}>OK</button>;
+  const button = <Button onClick={() => close()}>OK</Button>;
   const close = modal(content, [button]);
 };
 
@@ -80,8 +82,8 @@ const confirm = (content: string, yes?: () => void, no?: () => void) => {
     no && no();
   };
   const buttons = [
-    <button onClick={onYes}>OK</button>,
-    <button onClick={onNo}>CANCEL</button>,
+    <Button onClick={onYes}>OK</Button>,
+    <Button onClick={onNo}>CANCEL</Button>,
   ];
   const close = modal(content, buttons);
 };

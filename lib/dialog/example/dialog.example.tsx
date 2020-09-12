@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import Dialog, { alert, confirm, modal } from "../dialog";
+import React, {useState} from "react";
+import Dialog, {alert, confirm, modal} from "../dialog";
+import Button from "../../button/button";
 
 const DialogExample = () => {
   const handleCancel = () => {
@@ -13,7 +14,7 @@ const DialogExample = () => {
     const close = modal(
       <h1>
         nihao. modal!
-        <button onClick={() => close()}>关闭</button>
+        <Button level="primary" className="a" size="medium" onClick={() => close()}>关闭</Button>
       </h1>
     );
   };
@@ -21,7 +22,7 @@ const DialogExample = () => {
     <div>
       <div>
         <h1>点击mask不关闭</h1>
-        <button onClick={() => sety(!y)}>点击</button>
+        <Button onClick={() => sety(!y)}>点击</Button>
         <Dialog
           visible={y}
           onClose={() => {
@@ -29,8 +30,8 @@ const DialogExample = () => {
           }}
           closeMask={false}
           buttons={[
-            <button onClick={handleCancel}>Return</button>,
-            <button onClick={handleOk}>Submit</button>,
+            <Button level="normal" className="a" size="medium" onClick={handleCancel}>Return</Button>,
+            <Button level="primary" className="a" size="medium" onClick={handleOk}>Submit</Button>,
           ]}
         >
           modal
@@ -38,25 +39,27 @@ const DialogExample = () => {
       </div>
       <div>
         <h1>alert</h1>
-        <button onClick={() => alert("content")}>alert</button>
+        <Button onClick={() => alert("content")}>alert</Button>
       </div>
       <div>
         <h1>confirm</h1>
-        <button
+        <Button
           onClick={() =>
             confirm(
               "content",
-              () => {},
-              () => {}
+              () => {
+              },
+              () => {
+              }
             )
           }
         >
           confirm
-        </button>
+        </Button>
       </div>
       <div>
         <h1>modal</h1>
-        <button onClick={openModal}>modal</button>
+        <Button onClick={openModal}>modal</Button>
       </div>
     </div>
   );
