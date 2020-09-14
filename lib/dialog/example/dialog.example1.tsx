@@ -24,8 +24,8 @@ const DialogExample = () => {
           }}
           closeMask={true}
           buttons={[
-            <Button level="normal" className="a" size="medium" onClick={handleCancel}>Return</Button>,
             <Button level="primary" className="a" size="medium" onClick={handleOk}>Submit</Button>,
+            <Button level="normal" className="a" size="medium" onClick={handleCancel}>Cancel</Button>,
           ]}
         >
           点击mask关闭(默认)

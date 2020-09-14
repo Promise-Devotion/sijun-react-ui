@@ -32,7 +32,7 @@ const FormExample = () => {
       buttons={
         <Fragment>
           <Button type="submit" level="danger">提交</Button>
-          <Button>取消</Button>
+          <Button level="normal">取消</Button>
         </Fragment>
       }
       errors={errors}
