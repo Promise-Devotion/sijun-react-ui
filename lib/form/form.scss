@@ -1,9 +1,35 @@
 .jun-form {
-    .jun-form-row {
-        margin-bottom: 24px;
+    &-table {
+        border-collapse: collapse;
+    }
 
-        &:last-child {
-            margin-bottom: 0;
-        }
+    &-label {
+        line-height: 32px;
+    }
+
+    &-error {
+        color: red;
+        font-size: 0.8em;
+        margin-top: 3px;
+        line-height: 18px;
+        height: 18px;
+    }
+
+    &-td {
+        padding-top: 6px;
+        padding-bottom: 6px;
+        vertical-align: top;
+    }
+
+    &-tr:first-child &-td {
+        padding-top: 0;
+    }
+
+    &-tr:last-child &-td {
+        padding-bottom: 0;
+    }
+
+    &-td+&-td {
+        padding-left: 16px;
     }
 }
