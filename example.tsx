@@ -1,9 +1,11 @@
 import React from "react";
 import ReactDom from "react-dom";
 import IconExample from "./lib/icon/example/icon.demo";
+import InputExample from './lib/input/example/input.example';
 import ButtonExample from "./lib/button/example/button.example";
 import DialogExample from "./lib/dialog/example/dialog.demo";
 import LayoutExample from "./lib/layout/example/layout.axample";
+import NoticeExample from './lib/notice';
 import { HashRouter as Router, Route, NavLink } from "react-router-dom";
 // import Header from "./lib/layout/header";
 import Layout, { Header, Aside, Content, Footer } from "./lib/layout/layout";
@@ -41,6 +43,9 @@ ReactDom.render(
               <NavLink to="/button">Button 按钮</NavLink>
             </li>
             <li>
+              <NavLink to="/input">Input 输入框</NavLink>
+            </li>
+            <li>
               <NavLink to="/dialog">Dialog 对话框</NavLink>
             </li>
             <li>
@@ -52,8 +57,10 @@ ReactDom.render(
           </ul>
         </Aside>
         <Content className="example-content">
+          <Route path="/" component={NoticeExample}></Route>
           <Route path="/icon" component={IconExample} />
           <Route path="/button" component={ButtonExample} />
+          <Route path="/input" component={InputExample}></Route>
           <Route path="/dialog" component={DialogExample} />
           <Route path="/layout" component={LayoutExample} />
           <Route path="/form" component={FormExample} />
