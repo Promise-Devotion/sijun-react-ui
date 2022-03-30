@@ -7,6 +7,7 @@ module.exports = Object.assign({}, base, {
   entry: {
     example: './example.tsx'
   },
+  devtool: 'cheap-eval-source-map',
   plugins: [
     new HtmlWebpackPlugin({
       title: 'sijun - React',
